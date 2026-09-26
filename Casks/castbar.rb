@@ -1,6 +1,6 @@
 cask "castbar" do
-  version "0.1.0"
-  sha256 "5f3f3bc44fc06b7f7c8686a08d96cff59d4830e223f204c935df2996b1d0f9f4"
+  version "0.1.1"
+  sha256 "5d4d35dc5019ef146207dc2525e9f445c4613e36259ab9f1eea9e28478fed41f"
 
   url "https://github.com/itssarthak/castbar/releases/download/v#{version}/Castbar-#{version}.zip"
   name "Castbar"
