@@ -12,12 +12,12 @@ cask "castbar" do
 
   app "Castbar.app"
 
-  # Not notarized yet: clear the download quarantine so it opens without the Gatekeeper prompt,
-  # then launch it so the menu bar icon appears right after install.
+  # Not notarized yet: clear the download quarantine so it opens without the Gatekeeper prompt.
   postflight_steps do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Castbar.app"]
-    run "/usr/bin/open", args: ["{{appdir}}/Castbar.app"], must_succeed: false
   end
 
   uninstall quit: "com.itssarthak.castbar"
+
+  caveats "Start Castbar with: open -a Castbar"
 end
