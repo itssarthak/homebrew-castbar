@@ -2,6 +2,7 @@
 
 ```sh
 brew tap itssarthak/castbar
+brew trust itssarthak/castbar
 brew install castbar
 ```
 

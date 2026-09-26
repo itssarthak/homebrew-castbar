@@ -8,13 +8,13 @@ cask "castbar" do
   homepage "https://github.com/itssarthak/castbar"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :big_sur"
+  depends_on :macos
 
   app "Castbar.app"
 
   # Not notarized yet: clear the download quarantine so it opens without the Gatekeeper prompt.
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Castbar.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Castbar.app"]
   end
 
   uninstall quit: "com.itssarthak.castbar"
